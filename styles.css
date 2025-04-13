@@ -1,0 +1,15 @@
+*{
+border: solid red 1px;
+}
+.calculator.container{
+display: flex;
+justify-content: center;
+align-content: center;
+background-color: lightgray;
+border: black solid 1px;
+border-radius: 10px;
+}
+
+.calculator.screen{
+
+}
