@@ -10,7 +10,7 @@ border: solid red 1px;
 display: flex;
 flex-direction: column;
 background-color: rgb(35, 30, 30);
-border: black solid 1px;
+border: black solid 3px;
 border-radius: 10px;
 width: 400px;
 margin: 30px 500px 30px 600px;
@@ -44,11 +44,15 @@ align-items: center;
 background-color: rgb(38, 35, 35);
 padding:10px 20px 10px 20px;
 color: white;
-border-color: white;
+border-color: black;
 height: 50px;
 width: 60px;
 border-radius: 5px;
 margin: 5px 5px 5px 5px;
+}
+
+.calculator.buttons button:hover{
+    border-color: white;
 }
 
 
