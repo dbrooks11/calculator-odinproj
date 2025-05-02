@@ -3,13 +3,39 @@ border: solid red 1px;
 }
 .calculator.container{
 display: flex;
-justify-content: center;
-align-content: center;
-background-color: lightgray;
+flex-direction: column;
+background-color: white;
 border: black solid 1px;
 border-radius: 10px;
+width: 200px;
 }
 
 .calculator.screen{
+background-color: lightgray;
+margin: 10px 20px 10px 20px;
+}
+
+.calculator.buttons{
 
 }
+
+#division_button{
+
+}
+
+#multiply_button{
+
+}
+
+#subtract_button{
+
+}
+
+#add_button{
+
+}
+
+#equal_button{
+
+}
+
