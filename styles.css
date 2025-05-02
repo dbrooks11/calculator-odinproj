@@ -1,8 +1,9 @@
+/*
 
 *{
 border: solid red 1px;
 }
-
+*/
 
 
 .calculator.container{
@@ -26,7 +27,11 @@ margin: 30px 500px 30px 600px;
     justify-content: flex-end;
 }
 
-.calculator.nums{                                                                           
+.calculator.nums{     
+    font-size: 40px;
+    font-family: sans-serif;
+    margin-right: 5px;     
+                                                                 
 }
 
 .calculator.buttons{
@@ -46,20 +51,25 @@ border-radius: 5px;
 margin: 5px 5px 5px 5px;
 }
 
-#division_button{
 
+#division_button{
+background-color: rgb(60, 56, 56);
 }
 
 #multiply_button{
-
+    background-color: rgb(60, 56, 56);
 }
 
 #subtract_button{
-
+    background-color: rgb(60, 56, 56);
 }
 
 #add_button{
+    background-color: rgb(60, 56, 56);
+}
 
+#clear_button{
+    border-color: rgb(139, 11, 11);
 }
 
 #equal_button{
