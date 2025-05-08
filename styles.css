@@ -12,13 +12,14 @@ flex-direction: column;
 background-color: rgb(35, 30, 30);
 border: black solid 3px;
 border-radius: 10px;
-width: 400px;
-margin: 30px 500px 30px 600px;
+width: 600px;
+height: 650px;
+margin: 100px 700px 100px 700px;
 }
 
 .calculator.screen{
     background-color: rgb(141, 139, 139);
-    height: 60px;
+    height: 100px;
     margin: 30px 20px 30px 20px;
     display:flex;
     border: solid rgb(81, 79, 79) 2px;
@@ -28,7 +29,7 @@ margin: 30px 500px 30px 600px;
 }
 
 .calculator.nums{     
-    font-size: 40px;
+    font-size: 60px;
     font-family: sans-serif;
     margin-right: 5px;     
                                                                  
@@ -45,8 +46,8 @@ background-color: rgb(38, 35, 35);
 padding:10px 20px 10px 20px;
 color: white;
 border-color: black;
-height: 50px;
-width: 60px;
+height: 80px;
+width: 100px;
 border-radius: 5px;
 margin: 5px 5px 5px 5px;
 }
