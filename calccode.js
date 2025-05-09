@@ -18,12 +18,12 @@ buttons.forEach(button=>{
        
         if(isNum(value) && isNum2 == false){
             current += value;
-            calculatorScreen.textContent = current;
+            calculatorScreen.textContent = current + " ";
             num1 = parseInt(current);
             isNum1 = true;
         }
         else if(isOperator(value) && isNum1){
-            calculatorScreen.textContent += value;
+            calculatorScreen.textContent += value + " ";
             operator = value;
             isNum1 = false;
             isNum2 = true;
