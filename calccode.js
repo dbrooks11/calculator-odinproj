@@ -1,7 +1,5 @@
 /*
 *TODO: 
-* Make decimal button work (dont allow multiple decimal points)
-* Make calcultations with decimals work (round the answers)
 * Allow result to be used in next calculation
 */
 
@@ -43,16 +41,22 @@ buttons.forEach(button=>{
             displayNumTwo(current2);
              
         }
+        //delete button
         else if(value == "DEL"){
             if(isNum2 == false){
                 current = current.slice(0, -1);
                 displayNumOne(current);
+                hasDecimal = current.includes('.');
+
             }
             else if(isNum2){
-                current2 = current2.slice(0, -1);
+               current2 = current2.slice(0, -1);
                displayNumTwo(current2);
+               hasDecimal = current2.includes('.');
+                hasDecimal = !hasDecimal;
             }
         }
+        //pos/neg button
         else if(value =="+/-"){
             if(isNum2 == false){
                 num1 = posNeg(parseFloat(current));
@@ -65,6 +69,7 @@ buttons.forEach(button=>{
                 displayNumTwo(current2);
             }
         }
+        //decimal button
         else if(value =="."){
             if(isNum2 == false && hasDecimal == false){
                 current += ".";
@@ -77,9 +82,11 @@ buttons.forEach(button=>{
                 hasDecimal = false;
             }
         }
+        //clear button
         else if(value == "C"){
             clear();
         }
+        //equal button
         else if (value == "="){
             num1 = parseFloat(current);
             num2 = parseFloat(current2);
