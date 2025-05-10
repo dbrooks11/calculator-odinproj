@@ -17,6 +17,7 @@ let current2 = "";
  let isNum1 = false;
  let isNum2 = false; 
  let result = null;
+ let hasDecimal = false;
 
 buttons.forEach(button=>{
     button.addEventListener('click', ()=>{
@@ -54,28 +55,49 @@ buttons.forEach(button=>{
         }
         else if(value =="+/-"){
             if(isNum2 == false){
-                num1 = posNeg(parseInt(current));
+                num1 = posNeg(parseFloat(current));
                 current = num1.toString();
                 displayNumOne(current);
             }
             else if(isNum2){
-                num2 = posNeg(parseInt(current2));
+                num2 = posNeg(parseFloat(current2));
                 current2 = num2.toString();
                 displayNumTwo(current2);
+            }
+        }
+        else if(value =="."){
+            if(isNum2 == false && hasDecimal == false){
+                current += ".";
+                displayNumOne(current);
+                hasDecimal = true;
+            }
+            else if(isNum2 && hasDecimal == true){
+                current2 += ".";
+                displayNumTwo(current2);
+                hasDecimal = false;
             }
         }
         else if(value == "C"){
             clear();
         }
         else if (value == "="){
-            num1 = parseInt(current);
-            num2 = parseInt(current2);
-            calculatorScreen.textContent = operate(num1,operator,num2);
+            num1 = parseFloat(current);
+            num2 = parseFloat(current2);
             result = operate(num1,operator,num2);
+
+            //checks if its an integer or not
+            if(!Number.isInteger(result)){
+            calculatorScreen.textContent = result.toFixed(4)
+            }
+            else{
+            calculatorScreen.textContent = result;
+            }
+
             current = "";
             current2 = "";
             isNum1 = false;
             isNum2 = false;
+            hasDecimal = false;
         }
         else
         return false;
@@ -115,6 +137,7 @@ isNum1 = false;
 isNum2 = false;
 result = null;
 calculatorScreen.textContent = "";
+hasDecimal = false;
 
 }
 
