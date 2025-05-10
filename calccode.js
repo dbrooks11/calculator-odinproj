@@ -3,7 +3,6 @@
 * Make decimal button work (dont allow multiple decimal points)
 * Make calcultations with decimals work (round the answers)
 * Allow result to be used in next calculation
-*
 */
 
 
@@ -22,13 +21,13 @@ let current2 = "";
 buttons.forEach(button=>{
     button.addEventListener('click', ()=>{
         const value = button.textContent;
+
         if(calculatorScreen.textContent == "error")
                 clear();
        
         if(isNum(value) && isNum2 == false){
             current += value;
-            calculatorScreen.textContent = current + " ";
-            num1 = parseInt(current);
+            displayNumOne(current);
             isNum1 = true;
         }
         else if(isOperator(value) && isNum1){
@@ -40,13 +39,37 @@ buttons.forEach(button=>{
 
         else if(isNum(value) && isNum2){
             current2 += value;
-            calculatorScreen.textContent += value;
-             num2 = parseInt(current2);
+            displayNumTwo(current2);
+             
+        }
+        else if(value == "DEL"){
+            if(isNum2 == false){
+                current = current.slice(0, -1);
+                displayNumOne(current);
+            }
+            else if(isNum2){
+                current2 = current2.slice(0, -1);
+               displayNumTwo(current2);
+            }
+        }
+        else if(value =="+/-"){
+            if(isNum2 == false){
+                num1 = posNeg(parseInt(current));
+                current = num1.toString();
+                displayNumOne(current);
+            }
+            else if(isNum2){
+                num2 = posNeg(parseInt(current2));
+                current2 = num2.toString();
+                displayNumTwo(current2);
+            }
         }
         else if(value == "C"){
             clear();
         }
         else if (value == "="){
+            num1 = parseInt(current);
+            num2 = parseInt(current2);
             calculatorScreen.textContent = operate(num1,operator,num2);
             result = operate(num1,operator,num2);
             current = "";
@@ -68,12 +91,19 @@ else
 }
 
 function isOperator(values){
-if(values == "÷" || values == "-" || values == "+" || values == "*" )
+if(values == "÷" || values == "-" || values == "+" || values == "*" || values =="%")
     return true;
 else
     return false;
 }
 
+function displayNumOne(value){
+ calculatorScreen.textContent = value + " ";
+}
+
+function displayNumTwo(value) {
+  calculatorScreen.textContent = current + " " + operator + " " + value;
+}
 //clear button
 function clear(){
 num1 = null;
@@ -99,6 +129,8 @@ else if(operator == "*")
     return multiple(num1,num2);
 else if(operator == "÷")
     return divide(num1,num2);
+else if(operator == "%")
+    return percent(num1,num2);
 else if (num1 == null || operator== "" || num2 ==null)
     return "error";
 else
@@ -127,4 +159,14 @@ function divide(num1, num2){
     }
     else
         return num1 / num2;
+}
+
+//percentage function
+function percent(num1,num2){
+return (0.01 * num1) * num2;
+}
+
+//pos/neg function
+function posNeg(nums){
+    return (-1 * nums);
 }
