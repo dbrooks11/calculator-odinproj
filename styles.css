@@ -13,13 +13,13 @@ background-color: rgb(35, 30, 30);
 border: black solid 3px;
 border-radius: 10px;
 width: 600px;
-height: 650px;
+height: 750px;
 margin: 100px 700px 100px 700px;
 }
 
 .calculator.screen{
     background-color: rgb(141, 139, 139);
-    height: 100px;
+    height: 120px;
     margin: 30px 20px 30px 20px;
     display:flex;
     border: solid rgb(81, 79, 79) 2px;
@@ -76,10 +76,10 @@ background-color: rgb(60, 56, 56);
 
 #clear_button{
     border-color: rgb(139, 11, 11);
+    align-items: start;
 }
 
 #equal_button{
-margin: 10px 0px 20px 0px;
-width: 200px;
+background-color: rgb(16, 14, 14);
 }
 

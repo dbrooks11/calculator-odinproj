@@ -1,3 +1,12 @@
+/*
+*TODO: 
+* Make decimal button work (dont allow multiple decimal points)
+* Make calcultations with decimals work (round the answers)
+* Allow result to be used in next calculation
+*
+*/
+
+
 let buttons = document.querySelectorAll('button');
 let calculatorScreen = document.querySelector(".calculator.nums");
 
