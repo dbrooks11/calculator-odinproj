@@ -16,6 +16,7 @@ let current2 = "";
  let isNum2 = false; 
  let result = null;
  let hasDecimal = false;
+ let hasDecimal2 = false;
 
 buttons.forEach(button=>{
     button.addEventListener('click', ()=>{
@@ -52,8 +53,7 @@ buttons.forEach(button=>{
             else if(isNum2){
                current2 = current2.slice(0, -1);
                displayNumTwo(current2);
-               hasDecimal = current2.includes('.');
-                hasDecimal = !hasDecimal;
+               hasDecimal2 = current2.includes('.');
             }
         }
         //pos/neg button
@@ -76,10 +76,10 @@ buttons.forEach(button=>{
                 displayNumOne(current);
                 hasDecimal = true;
             }
-            else if(isNum2 && hasDecimal == true){
+            else if(isNum2 && hasDecimal2 == false){
                 current2 += ".";
                 displayNumTwo(current2);
-                hasDecimal = false;
+                hasDecimal2 = true;
             }
         }
         //clear button
@@ -105,6 +105,7 @@ buttons.forEach(button=>{
             isNum1 = false;
             isNum2 = false;
             hasDecimal = false;
+            hasDecimal2 = false;
         }
         else
         return false;
@@ -145,6 +146,7 @@ isNum2 = false;
 result = null;
 calculatorScreen.textContent = "";
 hasDecimal = false;
+hasDecimal2 = false;
 
 }
 
