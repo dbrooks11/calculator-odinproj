@@ -14,7 +14,7 @@ This is a basic calculator project built as part of [The Odin Project](https://w
 
 ## Live Demo
 
-[View the live demo](https://dbrooks11.github.io/calculator-odinproj)
+[View the live demo](https://simplecalculator-ecru.vercel.app/)
 
 ## Technologies Used
 
