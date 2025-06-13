@@ -1,5 +1,3 @@
-# calculator-odinproj
-
 # Simple Calculator
 
 This is a basic calculator project built as part of [The Odin Project](https://www.theodinproject.com/) curriculum. It performs simple arithmetic operations including addition, subtraction, multiplication, and division. It also supports decimal values and negative numbers.
